@@ -64,11 +64,11 @@ public class ASSIGNMENT2 {
     }      
 }
 class MatrixProduct extends Thread {
-    private int[][] A;
-    private int[][] B;
-    private int[][] C;
-    private int rig,col;
-    private int dim;
+    int[][] A;
+    int[][] B;
+    int[][] C;
+    int rig,col;
+    int dim;
 
     public MatrixProduct(int[][] A,int[][] B,int[][] C,int rig, int col,int dim_com)
     {
