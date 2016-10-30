@@ -35,7 +35,7 @@ public class ASSIGNMENT2 {
       {
     	  for(int j=0;j<3;j++)
     	  {
-    		  thrd[i][j]=new MatrixProduct(A,B,C,i,j,3);
+    		  thrd[i][j]=new MatrixProduct(A,B,C,i,j);
     		  thrd[i][j].start();
     	  }
       }
@@ -68,21 +68,19 @@ class MatrixProduct extends Thread {
     int[][] B;
     int[][] C;
     int rig,col;
-    int dim;
 
-    public MatrixProduct(int[][] A,int[][] B,int[][] C,int rig, int col,int dim_com)
+    public MatrixProduct(int[][] A,int[][] B,int[][] C,int rig, int col)
     {
        this.A=A;    
        this.B=B;
        this.C=C;
        this.rig=rig;    
-       this.col=col; 
-       this.dim=dim_com;     
+       this.col=col;      
     }
 
    public void run()
    {
-       for(int i=0;i<dim;i++){
+       for(int i=0;i<3;i++){
              C[rig][col]+=A[rig][i]*B[i][col];        
        }      
         System.out.println("Thread "+rig+","+col+" complete.");        
